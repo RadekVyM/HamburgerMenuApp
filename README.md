@@ -2,7 +2,7 @@
 
 **.NET MAUI** implementation of [Hamburger Menu with Landing Card Design](https://dribbble.com/shots/11101126-Hamburger-Menu-with-Landing-Card-Design) by [Sulai Man](https://dribbble.com/sully_man).
 
-https://github.com/RadekVyM/HamburgerMenuApp/assets/65116078/34561e0d-aae3-4342-9896-2522a42eac69
+https://github.com/RadekVyM/HamburgerMenuApp/assets/65116078/e4db39c0-8c6f-4ff7-8495-ded04b77e7e7
 
 This project demonstrates how to create **custom flyout navigation menu** using `SimpleShell` control from [SimpleToolkit](https://github.com/RadekVyM/SimpleToolkit).
 
