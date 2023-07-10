@@ -4,7 +4,7 @@
 
 https://github.com/RadekVyM/HamburgerMenuApp/assets/65116078/34561e0d-aae3-4342-9896-2522a42eac69
 
-This project demonstrates how to create custom flyout navigation menu using `SimpleShell` control from SimpleToolkit.
+This project demonstrates how to create **custom flyout navigation menu** using `SimpleShell` control from [SimpleToolkit](https://github.com/RadekVyM/SimpleToolkit).
 
 ## Original design
 
@@ -24,7 +24,7 @@ Here are some resources to learn more about .NET MAUI:
 
 ## Features
 
-Only .NET MAUI APIs and [SimpleToolkit](https://github.com/RadekVyM/SimpleToolkit) library were used to create this sample.
+Only .NET MAUI APIs and my [SimpleToolkit](https://github.com/RadekVyM/SimpleToolkit) library were used to create this sample.
 
 <p align="center">
     <img src="./images/android.gif" width="220">
