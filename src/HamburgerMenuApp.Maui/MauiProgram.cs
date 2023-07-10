@@ -1,4 +1,6 @@
 ﻿using HamburgerMenuApp.Core.Interfaces.Services;
+using HamburgerMenuApp.Core.Interfaces.ViewModels;
+using HamburgerMenuApp.Core.ViewModels;
 using HamburgerMenuApp.Maui.Services;
 using HamburgerMenuApp.Maui.Views.Pages;
 using Microsoft.Extensions.Logging;
@@ -30,7 +32,9 @@ public static class MauiProgram
         builder.Logging.AddDebug();
 #endif
 
+#if IOS || ANDROID
         builder.DisplayContentBehindBars();
+#endif
 #if ANDROID
         builder.SetDefaultStatusBarAppearance(Colors.Transparent, false);
 #endif
@@ -46,7 +50,9 @@ public static class MauiProgram
         builder.Services.AddTransient<NotificationPage>();
         builder.Services.AddTransient<SupportPage>();
 
-        builder.Services.AddTransient<INavigationService, NavigationService>();
+        builder.Services.AddSingleton<INavigationService, NavigationService>();
+
+        builder.Services.AddTransient<IHomePageViewModel, HomePageViewModel>();
 
         return builder.Build();
     }

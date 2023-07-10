@@ -11,11 +11,13 @@
     <None Remove="Interfaces\" />
     <None Remove="Interfaces\ViewModels\" />
     <None Remove="Interfaces\Services\" />
+    <None Remove="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Interfaces\ViewModels\" />
     <Folder Include="Interfaces\Services\" />
+    <Folder Include="Models\" />
   </ItemGroup>
 </Project>

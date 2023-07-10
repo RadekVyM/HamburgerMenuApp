@@ -144,7 +144,6 @@
             <Rectangle
                 x:Name="flyoutBackdrop"
                 Fill="Black"
-                Opacity="0.2"
                 Margin="-1"
                 InputTransparent="True">
                 <Rectangle.GestureRecognizers>
@@ -191,8 +190,11 @@
                             HorizontalOptions="Start" VerticalOptions="Center"
                             WidthRequest="65" HeightRequest="65"
                             StrokeShape="{Ellipse}"
-                            Background="Black">
-                            <ContentView/>
+                            StrokeThickness="0">
+                            <Image
+                                Source="avatar.jpg"
+                                Aspect="AspectFill"
+                                Background="Black"/>
                         </Border>
 
                         <VerticalStackLayout

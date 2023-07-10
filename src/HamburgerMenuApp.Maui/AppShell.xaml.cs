@@ -6,7 +6,7 @@ namespace HamburgerMenuApp.Maui;
 public partial class AppShell : SimpleShell
 {
     private const string FlyoutAnimationKey = "FlyoutAnimation";
-    private const double FlyoutBackdropOpacity = 0.2;
+    private const float FlyoutBackdropOpacity = 0.2f;
 
     private double flyoutWidth => 285 + safeArea.Left;
     private Thickness safeArea;
@@ -44,7 +44,8 @@ public partial class AppShell : SimpleShell
         if (!animated)
         {
             flyout.TranslationX = 0;
-            flyoutBackdrop.Opacity = FlyoutBackdropOpacity;
+            // TODO: I cannot use Opacity because it is broken on Android
+            flyoutBackdrop.Fill = Colors.Black.WithAlpha(FlyoutBackdropOpacity);
             return;
         }
 
@@ -53,13 +54,13 @@ public partial class AppShell : SimpleShell
         var animation = new Animation(v =>
         {
             flyout.TranslationX = -flyoutWidth * v;
-            flyoutBackdrop.Opacity = FlyoutBackdropOpacity * (1 - v);
+            flyoutBackdrop.Fill = Colors.Black.WithAlpha((float)((1 - v) * FlyoutBackdropOpacity));
         }, 1, 0);
 
         animation.Commit(flyout, FlyoutAnimationKey, easing: Easing.CubicOut, finished: (v, b) =>
         {
             flyout.TranslationX = 0;
-            flyoutBackdrop.Opacity = FlyoutBackdropOpacity;
+            flyoutBackdrop.Fill = Colors.Black.WithAlpha(FlyoutBackdropOpacity);
         });
     }
 
@@ -70,7 +71,7 @@ public partial class AppShell : SimpleShell
         if (!animated)
         {
             flyout.TranslationX = -flyoutWidth;
-            flyoutBackdrop.Opacity = 0;
+            flyoutBackdrop.Fill = Colors.Black.WithAlpha(0);
             return;
         }
 
@@ -79,12 +80,13 @@ public partial class AppShell : SimpleShell
         var animation = new Animation(v =>
         {
             flyout.TranslationX = -flyoutWidth * v;
-            flyoutBackdrop.Opacity = FlyoutBackdropOpacity * (1 - v);
+            flyoutBackdrop.Fill = Colors.Black.WithAlpha((float)((1 - v) * FlyoutBackdropOpacity));
         });
 
         animation.Commit(flyout, FlyoutAnimationKey, easing: Easing.CubicIn, finished: (v, b) =>
         {
             flyout.TranslationX = -flyoutWidth;
+            flyoutBackdrop.Fill = Colors.Black.WithAlpha(0);
         });
     }
 
