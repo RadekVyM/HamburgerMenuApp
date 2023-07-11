@@ -9,9 +9,7 @@
 
     x:DataType="viewModels:IHomePageViewModel"
 
-    Title="HomePage"
-
-    Background="White">
+    Title="HomePage">
 
     <Grid>
         <CollectionView
@@ -28,10 +26,10 @@
                         <Border
                             Margin="20, 10"
                             StrokeShape="{RoundRectangle CornerRadius=15}"
-                            Background="White"
+                            Background="{AppThemeBinding Light=White, Dark={StaticResource Gray950Brush}}"
                             StrokeThickness="{OnPlatform iOS=0, MacCatalyst=0}"
-                            Stroke="LightGray"
-                            Shadow="{Shadow Brush=Black, Opacity=0.08, Radius=5, Offset='0,5'}">
+                            Stroke="{AppThemeBinding Light=LightGray, Dark=#222}"
+                            Shadow="{Shadow Brush={AppThemeBinding Light=Black, Dark=White}, Opacity=0.08, Radius=5, Offset='0,5'}">
                             <Grid
                                 ColumnDefinitions="*, 110"
                                 ColumnSpacing="10">
@@ -56,12 +54,13 @@
                                     <Label
                                         Text="{Binding Title}"
                                         FontSize="20"
-                                        FontFamily="NunitoSemiBold"/>
+                                        FontFamily="NunitoSemiBold"
+                                        TextColor="{AppThemeBinding Light=Black, Dark=White}"/>
                                     <Label
                                         Grid.Row="1"
                                         Text="{Binding Text}"
                                         FontFamily="NunitoRegular"
-                                        TextColor="Gray"/>
+                                        TextColor="{AppThemeBinding Light=Gray, Dark=LightGray}"/>
                                 </Grid>
                             </Grid>
                         </Border>

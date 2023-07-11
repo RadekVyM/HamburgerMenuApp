@@ -16,7 +16,7 @@
         Title="Home"
         Route="HomeTab"
         Icon="home_bar.png"
-        FlyoutIcon="home.png">
+        FlyoutIcon="{AppThemeBinding Light=home.png, Dark=home_dark.png}">
         <ShellContent
             Title="Home"
             ContentTemplate="{DataTemplate pages:HomePage}"
@@ -27,7 +27,7 @@
         Title="My Post"
         Route="MyPostTab"
         Icon="document_bar.png"
-        FlyoutIcon="document.png">
+        FlyoutIcon="{AppThemeBinding Light=document.png, Dark=document_dark.png}">
         <ShellContent
             Title="My PostP"
             ContentTemplate="{DataTemplate pages:MyPostPage}"
@@ -38,7 +38,7 @@
         Title="Chat"
         Route="ChatTab"
         Icon="chat_bar.png"
-        FlyoutIcon="chat.png">
+        FlyoutIcon="{AppThemeBinding Light=chat.png, Dark=chat_dark.png}">
         <ShellContent
             Title="Chat"
             ContentTemplate="{DataTemplate pages:ChatPage}"
@@ -49,7 +49,7 @@
         Title="Invite Friends"
         Route="InviteFriendsTab"
         Icon="add_user_bar.png"
-        FlyoutIcon="add_user.png">
+        FlyoutIcon="{AppThemeBinding Light=add_user.png, Dark=add_user_dark.png}">
         <ShellContent
             Title="Invite Friends"
             ContentTemplate="{DataTemplate pages:InviteFriendsPage}"
@@ -60,7 +60,7 @@
         Title="Notification"
         Route="NotificationTab"
         Icon="bell_bar.png"
-        FlyoutIcon="bell.png">
+        FlyoutIcon="{AppThemeBinding Light=bell.png, Dark=bell_dark.png}">
         <ShellContent
             Title="Notification"
             ContentTemplate="{DataTemplate pages:NotificationPage}"
@@ -71,7 +71,7 @@
         Title="About Us"
         Route="AboutUsTab"
         Icon="document_bar.png"
-        FlyoutIcon="document.png">
+        FlyoutIcon="{AppThemeBinding Light=document.png, Dark=document_dark.png}">
         <ShellContent
             Title="About Us"
             ContentTemplate="{DataTemplate pages:AboutUsPage}"
@@ -82,7 +82,7 @@
         Title="Support"
         Route="SupportTab"
         Icon="headset_bar.png"
-        FlyoutIcon="headset.png">
+        FlyoutIcon="{AppThemeBinding Light=headset.png, Dark=headset_dark.png}">
         <ShellContent
             Title="Support"
             ContentTemplate="{DataTemplate pages:SupportPage}"
@@ -93,7 +93,7 @@
         Title="FAQ"
         Route="FaqTab"
         Icon="help_bar.png"
-        FlyoutIcon="help.png">
+        FlyoutIcon="{AppThemeBinding Light=help.png, Dark=help_dark.png}">
         <ShellContent
             Title="FAQ"
             ContentTemplate="{DataTemplate pages:FaqPage}"
@@ -129,7 +129,8 @@
                     Text="{Binding CurrentShellSection.Title, Source={x:Reference thisShell}}"
                     VerticalOptions="Center"
                     FontSize="30"
-                    FontFamily="NunitoBold"/>
+                    FontFamily="NunitoBold"
+                    TextColor="Black"/>
             </Grid>
 
             <simpleShell:SimpleNavigationHost
@@ -155,7 +156,7 @@
             <Grid
                 x:Name="flyout"
                 HorizontalOptions="Start" VerticalOptions="Fill"
-                Background="White"
+                Background="{AppThemeBinding Light=White, Dark=Black}"
                 WidthRequest="280"
                 Shadow="{OnPlatform Default={x:Null}, iOS={Shadow Brush=Black, Opacity=0.3}}">
                 <!-- TODO: On Android, TranslationX does not work when Shadow is set -->
@@ -203,7 +204,8 @@
                             <Label
                                 Text="Angel Fernandus"
                                 FontSize="19"
-                                FontFamily="NunitoSemiBold"/>
+                                FontFamily="NunitoSemiBold"
+                                TextColor="{AppThemeBinding Light=Black, Dark=White}"/>
                             <Label
                                 Text="angel_fernandus"
                                 FontSize="13"
@@ -237,11 +239,12 @@
                                                         Grid.Column="1"
                                                         Text="{Binding Title}"
                                                         FontFamily="NunitoSemiBold"
-                                                        FontSize="15"/>
+                                                        FontSize="15"
+                                                        TextColor="{AppThemeBinding Light=Black, Dark=White}"/>
                                                 </Grid>
 
                                                 <Rectangle
-                                                    Fill="LightGray"
+                                                    Fill="{AppThemeBinding Light=LightGray, Dark=Gray}"
                                                     HorizontalOptions="Fill" VerticalOptions="End"
                                                     HeightRequest="1.5"/>
                                             </VerticalStackLayout>
@@ -258,16 +261,17 @@
                                         <Image
                                             HorizontalOptions="Start" VerticalOptions="Center"
                                             WidthRequest="20" HeightRequest="20"
-                                            Source="log_out.png"/>
+                                            Source="{AppThemeBinding Light=log_out.png, Dark=log_out_dark.png}"/>
                                         <Label
                                             Grid.Column="1"
                                             Text="Logout"
                                             FontFamily="NunitoSemiBold"
-                                            FontSize="15"/>
+                                            FontSize="15"
+                                            TextColor="{AppThemeBinding Light=Black, Dark=White}"/>
                                     </Grid>
 
                                     <Rectangle
-                                        Fill="LightGray"
+                                        Fill="{AppThemeBinding Light=LightGray, Dark=Gray}"
                                         HorizontalOptions="Fill" VerticalOptions="End"
                                         HeightRequest="1.5"/>
                                 </VerticalStackLayout>
